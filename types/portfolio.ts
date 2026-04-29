@@ -44,6 +44,14 @@ export type PortfolioData = {
     roleMeta: string;
     headline: string;
     summary: string;
+    capabilityPanel: {
+      eyebrow: string;
+      title: string[];
+      signals: Array<{
+        label: string;
+        value: string;
+      }>;
+    };
   };
   profile: {
     title: string;

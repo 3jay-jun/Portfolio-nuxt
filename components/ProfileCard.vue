@@ -6,7 +6,7 @@ const props = defineProps<{
 }>();
 
 const personalRows = computed(() => [
-  ["BirthYear", props.person.birthYear],
+  ["Birth", props.person.birthYear],
   ["Age", props.person.age],
   ["Career", props.person.careerLabel],
   ["Location", props.person.location],
@@ -15,32 +15,30 @@ const personalRows = computed(() => [
 
 <template>
   <aside class="profile-card" aria-label="인적정보">
-    <div class="grid gap-5">
-      <div class="grid grid-cols-[128px_minmax(0,1fr)] gap-5 max-sm:grid-cols-1">
-        <div class="aspect-[4/5] overflow-hidden border border-line bg-soft">
-          <img class="block h-full w-full object-cover" :src="person.photo" :alt="`${person.name} 프로필 사진`" />
-        </div>
-        <div class="flex min-w-0 flex-col justify-between gap-5">
-          <div>
-            <p class="mb-2 text-xs font-extrabold uppercase tracking-[0.08em] text-copper">Personal</p>
-            <strong class="block text-[34px] font-extrabold leading-none text-ink">{{ person.name }}</strong>
-            <span class="mt-3 inline-block border-l-2 border-forest pl-3 text-sm font-extrabold text-forest">
-              {{ person.jobTitle }}
-            </span>
-          </div>
-          <div class="grid gap-2 text-sm">
-            <a class="profile-contact" :href="`mailto:${person.email}`">{{ person.email }}</a>
-            <a class="profile-contact" :href="`tel:${person.phone.replaceAll('-', '')}`">{{ person.phone }}</a>
-          </div>
-        </div>
+    <div class="profile-card-main">
+      <div class="profile-photo-frame">
+        <img class="block h-full w-full object-cover" :src="person.photo" :alt="`${person.name} 프로필 사진`" />
       </div>
 
-      <dl class="grid grid-cols-2 gap-px overflow-hidden border border-line bg-line max-sm:grid-cols-1">
-        <div v-for="[label, value] in personalRows" :key="label" class="bg-white/90 p-4">
-          <dt class="mb-1 text-[12px] font-extrabold text-muted">{{ label }}</dt>
-          <dd class="m-0 break-keep text-[15px] font-extrabold text-ink">{{ value }}</dd>
-        </div>
-      </dl>
+      <div class="min-w-0">
+        <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.16em] text-copper">Personal Info</p>
+        <strong class="block text-[36px] font-extrabold leading-none text-ink">{{ person.name }}</strong>
+        <span class="mt-4 inline-flex border-l-2 border-forest pl-3 text-sm font-extrabold text-forest">
+          {{ person.jobTitle }}
+        </span>
+      </div>
     </div>
+
+    <div class="profile-contact-list">
+      <a class="profile-contact" :href="`mailto:${person.email}`">{{ person.email }}</a>
+      <a class="profile-contact" :href="`tel:${person.phone.replaceAll('-', '')}`">{{ person.phone }}</a>
+    </div>
+
+    <dl class="profile-info-grid">
+      <div v-for="[label, value] in personalRows" :key="label">
+        <dt>{{ label }}</dt>
+        <dd>{{ value }}</dd>
+      </div>
+    </dl>
   </aside>
 </template>

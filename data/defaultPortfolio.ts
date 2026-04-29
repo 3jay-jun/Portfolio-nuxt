@@ -17,6 +17,11 @@ export const defaultPortfolio: PortfolioData = {
     roleMeta: "",
     headline: "",
     summary: "",
+    capabilityPanel: {
+      eyebrow: "",
+      title: [],
+      signals: [],
+    },
   },
   profile: {
     title: "",

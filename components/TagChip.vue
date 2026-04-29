@@ -5,8 +5,15 @@ defineProps<{
 </script>
 
 <template>
-  <span class="inline-flex items-center gap-2 border border-l-4 border-line border-l-forest bg-white px-3 py-1.5 text-[13px] font-extrabold text-ink">
-    <span class="h-1.5 w-1.5 bg-copper" aria-hidden="true"></span>
-    {{ label }}
+
+<span class="inline-flex items-center rounded-md border border-forest/20 bg-forest/5 px-2.5 py-1 text-[12px] font-medium text-forest">
+  # {{ label }}
+</span>
+<!--<span class="inline-flex items-center gap-2 rounded border border-line bg-white px-2 py-1 text-[12px] font-bold text-ink shadow-sm">
+  <span class="flex h-4 w-4 items-center justify-center rounded-sm bg-forest text-[10px] text-white">
+    {{ label[0] }}
   </span>
+  {{ label }}
+</span>-->
+
 </template>

@@ -41,23 +41,25 @@ const { resolveLink } = usePortfolioLinks();
       <div class="hero-orbit" aria-hidden="true">
         <span></span>
       </div>
+      <div class="hero-pulse" aria-hidden="true"></div>
       <div class="relative z-[1] grid gap-6">
         <div>
-          <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.12em] text-copper">Service Lifecycle</p>
-          <strong class="block text-[44px] font-extrabold leading-none text-ink">Build<br />Operate<br />Improve</strong>
+          <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.12em] text-copper">
+            {{ hero.capabilityPanel.eyebrow }}
+          </p>
+          <strong class="block text-[44px] font-extrabold leading-none text-ink">
+            <span v-for="line in hero.capabilityPanel.title" :key="line" class="block">{{ line }}</span>
+          </strong>
         </div>
         <div class="grid gap-3">
-          <div class="hero-signal">
-            <span>Backend</span>
-            <strong>Spring · Nest</strong>
-          </div>
-          <div class="hero-signal">
-            <span>Cloud</span>
-            <strong>AWS · NCP · OCI</strong>
-          </div>
-          <div class="hero-signal">
-            <span>Quality</span>
-            <strong>Security · Performance</strong>
+          <div
+            v-for="(signal, index) in hero.capabilityPanel.signals"
+            :key="`${signal.label}-${signal.value}`"
+            class="hero-signal"
+            :style="{ '--signal-delay': `${520 + index * 120}ms` }"
+          >
+            <span>{{ signal.label }}</span>
+            <strong>{{ signal.value }}</strong>
           </div>
         </div>
       </div>
