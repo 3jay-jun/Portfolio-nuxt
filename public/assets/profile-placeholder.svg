@@ -1,0 +1,7 @@
+<svg width="640" height="800" viewBox="0 0 640 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="800" fill="#ECE8DC"/>
+  <rect x="28" y="28" width="584" height="744" fill="#F7F6F2" stroke="#DEDAD0" stroke-width="2"/>
+  <circle cx="320" cy="292" r="104" fill="#214A3B"/>
+  <path d="M146 674C159.5 543.5 229.5 466 320 466C410.5 466 480.5 543.5 494 674H146Z" fill="#214A3B"/>
+  <text x="320" y="724" text-anchor="middle" fill="#6B6860" font-family="Arial, sans-serif" font-size="28" font-weight="700">PROFILE PHOTO</text>
+</svg>
