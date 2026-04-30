@@ -21,7 +21,7 @@ const displayMark = computed(() => props.brandMark || fallbackMark.value);
   >
     <a
       class="grid h-12 min-w-12 place-items-center border border-ink bg-ink px-2 text-sm font-extrabold text-paper"
-      href="#top"
+      href="/portfolio#top"
       :aria-label="`${name} 포트폴리오 홈`"
     >
       {{ displayMark }}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio service thumbnail</title>
+  <desc id="desc">Minimal portfolio dashboard preview</desc>
+  <rect width="960" height="600" fill="#f5f1e8"/>
+  <rect x="72" y="72" width="816" height="456" rx="22" fill="#ffffff" stroke="#d8d1c4" stroke-width="2"/>
+  <rect x="112" y="118" width="240" height="28" rx="14" fill="#214a3b"/>
+  <rect x="112" y="176" width="510" height="38" rx="19" fill="#181816"/>
+  <rect x="112" y="232" width="420" height="18" rx="9" fill="#8b877d"/>
+  <rect x="112" y="292" width="202" height="144" rx="18" fill="#f1eee6" stroke="#d8d1c4"/>
+  <rect x="340" y="292" width="202" height="144" rx="18" fill="#f1eee6" stroke="#d8d1c4"/>
+  <rect x="568" y="292" width="202" height="144" rx="18" fill="#f1eee6" stroke="#d8d1c4"/>
+  <circle cx="738" cy="166" r="66" fill="#214a3b"/>
+  <path d="M706 167h64M738 135v64" stroke="#f5f1e8" stroke-width="12" stroke-linecap="round"/>
+</svg>

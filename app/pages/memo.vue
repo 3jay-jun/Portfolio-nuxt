@@ -1,3 +1,10 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: "service",
+  pageId: "memo",
+});
+</script>
+
 <template>
   <main class="service-page memo-service">
     <section class="memo-panel">

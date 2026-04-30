@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import type {Page} from "~/types/page";
-import {defaultPages} from "~/data/defaultPages";
+import { defaultPages } from "~/data/defaultPages";
+import type { Page } from "~/types/page";
 
-const { data: pages } = await useAsyncData("pages", () =>
-        appFetch<Page[]>("/api/pages"),
-    {
-      default: () => defaultPages,
-    },
-);
+definePageMeta({
+  layout: "workspace",
+});
+
+const { data: pages } = await useAsyncData("pages", () => appFetch<Page[]>("/api/pages"), {
+  default: () => defaultPages,
+});
 
 const visiblePages = computed(() => pages.value.filter((page) => page.enabled));
 
@@ -31,33 +32,41 @@ useHead({
       </header>
 
       <section class="workspace-hero">
-      <div>
-        <p class="eyebrow">Index</p>
-        <h1 class="workspace-title">
-          Work, notes, and small tools.
-        </h1>
-        <p class="workspace-copy">
-          포트폴리오를 시작으로 블로그, 메모장, 팀 나누기 같은 작은 도구들을 하나씩 확장해가는 개인 웹사이트입니다.
-        </p>
-      </div>
+        <div class="">
+          <p class="eyebrow">Index</p>
+          <h1 class="workspace-title">
+            Work, notes, and small tools.
+          </h1>
+          <p class="workspace-copy">
+            포트폴리오를 시작으로 블로그, 메모장, 팀 나누기 같은 작은 도구들을 하나씩 확장해가는 개인 웹사이트입니다.
+          </p>
+        </div>
 
-      <div class="workspace-grid">
-        <NuxtLink
-          v-for="page in visiblePages"
-          :key="page.path"
-          :to="page.path"
-          class="workspace-card"
-          :class="{ 'is-disabled': page.status === 'Soon' }"
-          :style="{ '--page-accent': page.accent }"
-        >
-          <div class="workspace-card-status">
-            <span>{{ page.status }}</span>
-            <span>{{ page.metric }}</span>
-          </div>
-          <h2 class="workspace-card-title">{{ page.title }}</h2>
-          <p class="workspace-card-copy">{{ page.description }}</p>
-        </NuxtLink>
-      </div>
+        <div class="workspace-grid">
+          <NuxtLink
+            v-for="page in visiblePages"
+            :key="page.id"
+            :to="page.path"
+            class="workspace-card"
+            :class="{ 'is-disabled': page.status === 'Soon' }"
+            :style="{ '--page-accent': page.accent }"
+            :target="page.openMode === 'blank' ? '_blank' : undefined"
+            :rel="page.openMode === 'blank' ? 'noreferrer' : undefined"
+            :external="page.openMode === 'blank'"
+          >
+            <figure v-if="page.seo.image" class="workspace-card-thumb">
+              <img :src="page.seo.image" :alt="`${page.title} thumbnail`" loading="lazy" />
+            </figure>
+            <div class="workspace-card-body">
+              <div class="workspace-card-status">
+                <span>{{ page.status }}</span>
+                <span>{{ page.metric }}</span>
+              </div>
+              <h2 class="workspace-card-title">{{ page.title }}</h2>
+              <p class="workspace-card-copy">{{ page.description }}</p>
+            </div>
+          </NuxtLink>
+        </div>
       </section>
     </div>
   </main>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Blog service thumbnail</title>
+  <desc id="desc">Editorial blog preview</desc>
+  <rect width="960" height="600" fill="#f4f7fb"/>
+  <rect x="96" y="82" width="768" height="436" rx="24" fill="#ffffff" stroke="#d3dbe6" stroke-width="2"/>
+  <rect x="142" y="132" width="172" height="22" rx="11" fill="#335c81"/>
+  <rect x="142" y="192" width="508" height="48" rx="24" fill="#17212b"/>
+  <rect x="142" y="262" width="420" height="16" rx="8" fill="#748193"/>
+  <rect x="142" y="302" width="610" height="16" rx="8" fill="#c3ccd8"/>
+  <rect x="142" y="336" width="548" height="16" rx="8" fill="#c3ccd8"/>
+  <rect x="142" y="390" width="188" height="48" rx="24" fill="#335c81"/>
+  <path d="M686 180h90v178h-90z" fill="#e5edf6"/>
+  <path d="M710 214h42M710 248h42M710 282h42" stroke="#335c81" stroke-width="12" stroke-linecap="round"/>
+</svg>

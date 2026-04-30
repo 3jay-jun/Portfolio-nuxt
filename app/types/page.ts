@@ -3,6 +3,7 @@ export type PageType = "portfolio" | "blog" | "memo" | "team" | "external";
 export type PageSeo = {
   title: string;
   description: string;
+  image?: string;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
@@ -13,6 +14,7 @@ export type Page = {
   type: PageType;
   title: string;
   path: string;
+  openMode: "self" | "blank";
   status: "Live" | "Soon" | "Hidden";
   enabled: boolean;
   order: number;
