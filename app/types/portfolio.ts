@@ -27,10 +27,22 @@ export type ExperienceItem = {
 };
 
 export type Project = {
+  slug: string;
   title: string;
   meta: string;
   description: string;
   tags: string[];
+  thumbnail?: {
+    src: string;
+    alt: string;
+  };
+  detail?: {
+    summary?: string;
+    role?: string;
+    period?: string;
+    tasks?: string[];
+    outcomes?: string[];
+  };
 };
 
 export type SkillGroup = {

@@ -7,7 +7,9 @@ export default defineNuxtConfig({
     "~/assets/css/main.css",
     "~/assets/css/font.css",
     "~/assets/css/common.css",
+    "~/assets/css/home.css",
     "~/assets/css/portfolio.css",
+    "~/assets/css/services.css",
     "~/assets/css/animation.css",
   ],
   runtimeConfig: {

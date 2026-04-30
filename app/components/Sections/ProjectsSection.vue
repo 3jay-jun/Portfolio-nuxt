@@ -13,21 +13,27 @@ defineProps<{
       <h2 class="section-title">대표 업무</h2>
     </div>
     <div class="border-t border-line">
-      <article
+      <NuxtLink
         v-for="(project, index) in projects"
-        :key="project.title"
-        class="grid grid-cols-[90px_minmax(0,1fr)] gap-11 border-b border-line py-[34px] max-md:grid-cols-1 max-md:gap-3.5"
+        :key="project.slug"
+        :to="`/portfolio/projects/${project.slug}`"
+        class="project-list-item"
+        :class="{ 'has-thumbnail': project.thumbnail }"
       >
-        <div class="text-sm font-extrabold text-copper">{{ String(index + 1).padStart(2, "0") }}</div>
+        <div class="project-list-index">{{ String(index + 1).padStart(2, "0") }}</div>
+        <figure v-if="project.thumbnail" class="project-list-thumb">
+          <img :src="project.thumbnail.src" :alt="project.thumbnail.alt" loading="lazy" />
+        </figure>
         <div>
-          <h3 class="mb-2.5 text-[22px] font-extrabold leading-snug">{{ project.title }}</h3>
-          <p class="mb-3.5 text-sm font-extrabold text-forest">{{ project.meta }}</p>
-          <p class="max-w-[820px] text-muted">{{ project.description }}</p>
+          <h3 class="project-list-title">{{ project.title }}</h3>
+          <p class="project-list-meta">{{ project.meta }}</p>
+          <p class="project-list-copy">{{ project.description }}</p>
           <div class="mt-5 flex flex-wrap gap-2">
             <TagChip v-for="tag in project.tags" :key="`${project.title}-${tag}`" :label="tag" />
           </div>
+          <span class="project-list-more">상세 보기</span>
         </div>
-      </article>
+      </NuxtLink>
     </div>
   </section>
 </template>
