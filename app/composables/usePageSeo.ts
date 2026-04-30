@@ -1,26 +1,34 @@
-import rawPages from "~/server/data/pages.json";
+import { defaultPages } from "~/data/defaultPages";
 import type { Page } from "~/types/page";
 
-const pages = rawPages as Page[];
-
-export const usePageSeo = (pageId: string) => {
-  const page = pages.find((item) => item.id === pageId);
-
-  if (!page?.seo) {
-    return { page };
-  }
-
-  const image = page.seo.ogImage || page.seo.image;
-
-  useHead({
-    title: page.seo.title,
-    meta: [
-      { name: "description", content: page.seo.description },
-      { property: "og:title", content: page.seo.ogTitle || page.seo.title },
-      { property: "og:description", content: page.seo.ogDescription || page.seo.description },
-      ...(image ? [{ property: "og:image", content: image }] : []),
-    ],
+export const usePageSeo = async (pageId: string) => {
+  const asyncData = useAsyncData("layout-pages", () => appFetch<Page[]>("/api/pages"), {
+    default: () => defaultPages,
   });
+
+  const page = computed(() => asyncData.data.value?.find((item) => item.id === pageId));
+
+  useHead(() => {
+    const seo = page.value?.seo;
+
+    if (!seo) {
+      return {};
+    }
+
+    const image = seo.ogImage || seo.image;
+
+    return {
+      title: seo.title,
+      meta: [
+        { name: "description", content: seo.description },
+        { property: "og:title", content: seo.ogTitle || seo.title },
+        { property: "og:description", content: seo.ogDescription || seo.description },
+        ...(image ? [{ property: "og:image", content: image }] : []),
+      ],
+    };
+  });
+
+  await asyncData;
 
   return { page };
 };
