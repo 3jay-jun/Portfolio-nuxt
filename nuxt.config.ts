@@ -1,8 +1,20 @@
 export default defineNuxtConfig({
   compatibilityDate: "2026-04-28",
+  srcDir: "app/",
   components: [{ path: "~/components/", pathPrefix: false }],
   modules: ["@nuxtjs/tailwindcss"],
-  css: ["~/assets/css/main.css"],
+  css: [
+    "~/assets/css/main.css",
+    "~/assets/css/font.css",
+    "~/assets/css/common.css",
+    "~/assets/css/portfolio.css",
+    "~/assets/css/animation.css",
+  ],
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: "",
+    },
+  },
   app: {
     head: {
       htmlAttrs: {

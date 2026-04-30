@@ -2,12 +2,14 @@
 import { defaultPortfolio } from "~/data/defaultPortfolio";
 import type { PortfolioData } from "~/types/portfolio";
 
-const portfolio = ref<PortfolioData>(defaultPortfolio);
+const { data: portfolio } = await useAsyncData("portfolio", () =>
+  appFetch<PortfolioData>("/api/portfolio"),
+  {
+    default: () => defaultPortfolio,
+  },
+);
 
 onMounted(async () => {
-  const response = await fetch("/portfolio.json", { cache: "no-store" });
-  portfolio.value = await response.json();
-
   await nextTick();
 
   const revealTargets = document.querySelectorAll(".reveal-on-scroll");

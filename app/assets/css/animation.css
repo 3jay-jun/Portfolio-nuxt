@@ -1,0 +1,108 @@
+.hero-kicker {
+  animation: hero-rise 520ms ease-out both;
+}
+
+.hero-title {
+  animation: hero-slide-in 680ms ease-out 80ms both;
+}
+
+.hero-headline {
+  animation: hero-rise 680ms ease-out 160ms both;
+}
+
+.hero-summary {
+  animation: hero-rise 720ms ease-out 240ms both;
+}
+
+.hero-actions {
+  animation: hero-rise 760ms ease-out 320ms both;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 620ms ease,
+    transform 620ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-signal-rise {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-grid-drift {
+  to {
+    background-position: 28px 28px;
+  }
+}
+
+@keyframes hero-pulse {
+  from {
+    opacity: 0.65;
+    transform: scale(0.55);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+@keyframes hero-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
