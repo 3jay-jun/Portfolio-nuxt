@@ -12,10 +12,10 @@
     "metric": "View",
     "accent": "#214a3b",
     "seo": {
-      "title": "정재준 포트폴리오",
+      "title": "Portfolio| 3Jay",
       "description": "웹개발자 정재준의 경력, 프로젝트, 기술 스택을 정리한 포트폴리오입니다.",
       "image": "/assets/service-portfolio.svg",
-      "ogTitle": "정재준 | Web Developer Portfolio",
+      "ogTitle": "Web Developer Portfolio | 3Jay",
       "ogDescription": "운영 안정성, 보안 대응, 레거시 개선, 인프라 운영 경험을 담은 포트폴리오",
       "ogImage": "/assets/service-portfolio.svg"
     }
@@ -43,7 +43,7 @@
   {
     "id": "memo",
     "type": "memo",
-    "title": "Memo",
+    "title": "Memo | 3Jay",
     "path": "/memo",
     "openMode": "self",
     "status": "Soon",
@@ -62,7 +62,7 @@
   {
     "id": "team",
     "type": "team",
-    "title": "Team",
+    "title": "Team | 3Jay",
     "path": "/team",
     "openMode": "self",
     "status": "Soon",

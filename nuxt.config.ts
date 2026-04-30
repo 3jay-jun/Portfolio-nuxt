@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "ko",
       },
-      title: "정재준 | 웹개발자 포트폴리오",
+      title: "3Jay.jun | Portfolio",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
