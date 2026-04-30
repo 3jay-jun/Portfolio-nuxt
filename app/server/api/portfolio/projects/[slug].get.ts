@@ -1,11 +1,7 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import portfolio from "../../../data/portfolio.json";
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, "slug");
-  const filePath = join(process.cwd(), "app", "server", "data", "portfolio.json");
-  const content = await readFile(filePath, "utf-8");
-  const portfolio = JSON.parse(content);
   const project = portfolio.projects.find((item: { slug?: string }) => item.slug === slug);
 
   if (!project) {

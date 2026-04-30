@@ -3,6 +3,8 @@ definePageMeta({
   layout: "service",
   pageId: "blog",
 });
+
+await usePageSeo("blog");
 </script>
 
 <template>

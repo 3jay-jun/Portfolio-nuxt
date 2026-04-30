@@ -6,7 +6,7 @@
     "dev": "nuxt dev --host 127.0.0.1 --port 4173",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "preview": "nuxt preview --host 127.0.0.1 --port 4173"
+    "preview": "nuxt preview --port 4173"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.2",

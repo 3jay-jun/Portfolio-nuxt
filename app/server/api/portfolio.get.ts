@@ -1,9 +1,5 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import portfolio from "../data/portfolio.json";
 
 export default defineEventHandler(async () => {
-  const filePath = join(process.cwd(), "app", "server", "data", "portfolio.json");
-  const content = await readFile(filePath, "utf-8");
-
-  return JSON.parse(content);
+  return portfolio;
 });

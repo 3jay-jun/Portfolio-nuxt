@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const route = useRoute();
+const pageId = String(route.meta.pageId || route.path.split("/").filter(Boolean)[0] || "");
 
-await usePageSeo(String(route.meta.pageId || ""));
+await usePageSeo(pageId);
 </script>
 
 <template>
