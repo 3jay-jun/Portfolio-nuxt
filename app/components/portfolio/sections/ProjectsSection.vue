@@ -7,31 +7,40 @@ defineProps<{
 </script>
 
 <template>
-  <section id="projects" class="section reveal-on-scroll">
-    <div class="section-heading">
-      <p class="eyebrow">Selected Work</p>
-      <h2 class="section-title">대표 업무</h2>
+  <section id="projects" class="mx-auto max-w-content px-6 py-24 reveal-on-scroll">
+    <div class="mb-12 flex items-end justify-between gap-6">
+      <div>
+        <h2 class="text-[clamp(32px,5vw,56px)] font-black leading-[1.08]">Projects</h2>
+      </div>
+      <span class="hidden text-sm font-medium text-body-gray sm:inline">{{ projects.length }} cases</span>
     </div>
-    <div class="border-t border-line">
+
+    <div class="grid gap-6">
       <NuxtLink
         v-for="(project, index) in projects"
         :key="project.slug"
         :to="`/portfolio/projects/${project.slug}`"
-        class="project-list-item"
-        :class="{ 'has-thumbnail': project.thumbnail }"
+        class="group grid overflow-hidden rounded-featured bg-white shadow-card transition hover:-translate-y-1 hover:shadow-card-hover"
+        :class="{ 'lg:grid-cols-[320px_minmax(0,1fr)]': project.thumbnail }"
       >
-        <div class="project-list-index">{{ String(index + 1).padStart(2, "0") }}</div>
-        <figure v-if="project.thumbnail" class="project-list-thumb">
-          <img :src="project.thumbnail.src" :alt="project.thumbnail.alt" loading="lazy" />
+        <figure v-if="project.thumbnail" class="aspect-video overflow-hidden bg-chip-gray lg:aspect-auto">
+          <img class="w-full h-full object-cover transition duration-300 group-hover:scale-105" :src="project.thumbnail.src" :alt="project.thumbnail.alt" loading="lazy" />
         </figure>
-        <div>
-          <h3 class="project-list-title">{{ project.title }}</h3>
-          <p class="project-list-meta">{{ project.meta }}</p>
-          <p class="project-list-copy">{{ project.description }}</p>
-          <div class="mt-5 flex flex-wrap gap-2">
+
+        <div class="p-7">
+          <div class="mb-4 flex flex-wrap gap-2">
+            <span class="rounded-pill bg-black px-4 py-2 text-sm font-medium text-white">
+              {{ String(index + 1).padStart(2, "0") }}
+            </span>
+            <AppPill >
+              {{ project.meta }}
+            </AppPill>
+          </div>
+          <h3 class="text-[clamp(24px,3vw,34px)] font-black leading-tight">{{ project.title }}</h3>
+          <p class="mt-4 max-w-3xl leading-relaxed text-body-gray">{{ project.description }}</p>
+          <div class="mt-6 flex flex-wrap gap-2">
             <TagChip v-for="tag in project.tags" :key="`${project.title}-${tag}`" :label="tag" />
           </div>
-          <span class="project-list-more">상세 보기</span>
         </div>
       </NuxtLink>
     </div>

@@ -9,10 +9,12 @@ const scrollToTop = () => {
 </script>
 
 <template>
-  <footer class="mx-auto flex w-[min(1120px,calc(100%_-_40px))] items-center justify-between py-[30px] pb-[42px] text-sm text-muted">
-    <span>© 2026 {{ name }}</span>
-    <button class="h-[42px] w-[42px] border border-line bg-white text-lg text-ink" type="button" aria-label="맨 위로 이동" @click="scrollToTop">
+  <footer class="bg-black">
+    <div class="mx-auto flex w-[min(1136px,calc(100%_-_40px))] items-center justify-between py-8 text-sm text-muted-gray max-sm:flex-col max-sm:items-start">
+      <span class="font-medium">© 2026 {{ name }}</span>
+      <button class="h-11 w-11 rounded-full bg-white text-lg text-ink shadow-floating transition hover:bg-hover-light" type="button" aria-label="맨 위로 이동" @click="scrollToTop">
       ↑
-    </button>
+      </button>
+    </div>
   </footer>
 </template>

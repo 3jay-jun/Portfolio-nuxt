@@ -7,15 +7,19 @@ defineProps<{
 </script>
 
 <template>
-  <section id="skills" class="section reveal-on-scroll">
-    <div class="section-heading">
-      <p class="eyebrow">Skills</p>
-      <h2 class="section-title">기술 스택</h2>
+  <section id="skills" class="mx-auto max-w-content px-6 py-24 reveal-on-scroll">
+    <div class="mb-12 flex items-end justify-between gap-6">
+      <div>
+        <h2 class="text-[clamp(32px,5vw,56px)] font-black leading-[1.08]">Tech Stack</h2>
+      </div>
     </div>
-    <div class="panel-grid grid grid-cols-3 max-md:grid-cols-1">
-      <div v-for="skill in skills" :key="skill.group" class="min-h-[170px] bg-white/80 p-6">
-        <h3 class="mb-2.5 text-[17px] font-extrabold text-forest">{{ skill.group }}</h3>
-        <p class="m-0 text-muted">{{ skill.items.join(", ") }}</p>
+
+    <div class="grid gap-1 bg-opacity-100 overflow-hidden rounded-featured  shadow-card md:grid-cols-2 lg:grid-cols-3 border-none">
+      <div v-for="skill in skills" :key="skill.group" class="min-h-[190px] bg-white p-6">
+        <h3 class="mb-5 text-2xl font-black leading-tight">{{ skill.group }}</h3>
+        <div class="flex flex-wrap gap-2">
+          <TagChip v-for="item in skill.items" :key="`${skill.group}-${item}`" :label="item" />
+        </div>
       </div>
     </div>
   </section>

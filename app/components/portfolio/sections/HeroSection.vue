@@ -11,58 +11,61 @@ const { resolveLink } = usePortfolioLinks();
 </script>
 
 <template>
-  <section class="section grid min-h-[calc(100vh-78px)] grid-cols-[minmax(0,1fr)_410px] items-center gap-14 pt-[76px] max-lg:grid-cols-1 max-md:min-h-0 max-md:gap-8 max-md:pt-16">
-    <div class="hero-copy">
-      <p class="eyebrow hero-kicker">{{ hero.roleMeta }}</p>
-      <h1 class="hero-title mb-5 text-[clamp(64px,12vw,142px)] font-extrabold leading-[0.9] tracking-normal max-md:text-[clamp(58px,20vw,92px)]">
-        {{ person.name }}
-      </h1>
-      <p class="hero-headline mb-[18px] max-w-[760px] text-[clamp(26px,4vw,44px)] font-extrabold leading-[1.18] max-md:text-[28px]">
-        {{ hero.headline }}
-      </p>
-      <p class="hero-summary max-w-[720px] text-lg leading-relaxed text-muted">
-        {{ hero.summary }}
-      </p>
-      <div class="hero-actions mt-8 flex flex-wrap gap-2.5 max-[520px]:w-full" aria-label="연락처 바로가기">
+  <section class="mx-auto max-w-content px-6 pb-24 pt-20">
+    <div class="grid min-h-[calc(100vh-180px)] items-end gap-12 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <div>
+        <div class="mb-8 flex flex-wrap gap-2 [animation-delay:.08s] animate-fade-up">
+          <span class="border-l-4 border-black py-1 pl-3 text-sm font-black uppercase text-black">Portfolio · {{ hero.roleMeta }} </span>
+        </div>
+
+        <h1 class="max-w-4xl text-[clamp(48px,8vw,92px)] font-black leading-[1.02] [animation-delay:.16s] animate-fade-up">
+          {{ person.name }}<br />
+          {{ person.jobTitle }}
+        </h1>
+
+        <p class="mt-8 max-w-3xl text-[clamp(22px,3vw,34px)] font-bold leading-[1.3] [animation-delay:.26s] animate-fade-up">
+          {{ hero.headline }}
+        </p>
+
+        <p class="mt-5 max-w-[620px] text-base leading-relaxed text-body-gray [animation-delay:.36s] animate-fade-up">
+          {{ hero.summary }}
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-3 [animation-delay:.46s] animate-fade-up" aria-label="연락처 바로가기">
         <a
           v-for="link in links"
           :key="`${link.label}-${resolveLink(link, person)}`"
-          class="button"
-          :class="link.primary ? 'button-primary' : 'button-secondary'"
+          class="rounded-pill px-5 py-3 text-[15px] font-medium leading-none transition hover:-translate-y-0.5"
+          :class="link.primary ? 'bg-black text-white hover:bg-black/80' : 'border border-black bg-white text-black hover:bg-hover-gray'"
           :href="resolveLink(link, person)"
         >
           {{ link.label }}
         </a>
+        </div>
       </div>
-    </div>
 
-    <aside class="hero-visual" aria-label="핵심 역량 요약">
-      <div class="hero-visual-grid" aria-hidden="true"></div>
-      <div class="hero-orbit" aria-hidden="true">
-        <span></span>
-      </div>
-      <div class="hero-pulse" aria-hidden="true"></div>
-      <div class="relative z-[1] grid gap-6">
+      <aside class="rounded-featured bg-white p-7 shadow-card [animation-delay:.56s] animate-fade-up" aria-label="핵심 역량 요약">
         <div>
-          <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.12em] text-copper">
-            {{ hero.capabilityPanel.eyebrow }}
-          </p>
-          <strong class="block text-[44px] font-extrabold leading-none text-ink">
+          <p class="mb-4 text-sm font-medium text-body-gray">{{ hero.capabilityPanel.eyebrow }}</p>
+          <strong class="block text-[40px] font-black leading-none text-black">
             <span v-for="line in hero.capabilityPanel.title" :key="line" class="block">{{ line }}</span>
           </strong>
         </div>
-        <div class="grid gap-3">
+
+        <hr class="my-7 border-black" />
+
+        <div class="grid gap-2">
           <div
             v-for="(signal, index) in hero.capabilityPanel.signals"
             :key="`${signal.label}-${signal.value}`"
-            class="hero-signal"
+            class="flex items-center justify-between gap-4 rounded-pill bg-chip-gray px-4 py-3"
             :style="{ '--signal-delay': `${520 + index * 120}ms` }"
           >
-            <span>{{ signal.label }}</span>
-            <strong>{{ signal.value }}</strong>
+            <span class="text-xs font-medium text-body-gray">{{ signal.label }}</span>
+            <strong class="text-right text-sm font-bold">{{ signal.value }}</strong>
           </div>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </div>
   </section>
 </template>

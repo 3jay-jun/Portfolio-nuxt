@@ -17,23 +17,25 @@ const displayMark = computed(() => props.brandMark || fallbackMark.value);
 
 <template>
   <header
-    class="sticky top-0 z-10 mx-auto flex w-full items-center justify-between px-12 py-[18px] backdrop-blur-[18px] max-md:w-[min(1120px,calc(100%_-_28px))] max-md:px-0 max-[520px]:static max-[520px]:items-start"
+    class="sticky top-0 z-40 border-b border-black/10 bg-white/95 backdrop-blur-[18px]"
   >
-    <a
-      class="grid h-12 min-w-12 place-items-center border border-ink bg-ink px-2 text-sm font-extrabold text-paper"
-      href="/portfolio#top"
-      :aria-label="`${name} 포트폴리오 홈`"
-    >
-      {{ displayMark }}
-    </a>
-    <nav
-      class="flex items-center gap-2 border border-ink/10 bg-white/70 p-1.5 max-md:gap-0 max-[520px]:grid max-[520px]:grid-cols-2"
-      aria-label="주요 섹션"
-    >
-      <a class="nav-link" href="#profile">Profile</a>
-      <a class="nav-link" href="#experience">Experience</a>
-      <a class="nav-link" href="#projects">Work</a>
-      <a class="nav-link" href="#skills">Skills</a>
-    </nav>
+    <div class="mx-auto flex h-16 w-[min(1136px,calc(100%_-_40px))] items-center justify-between gap-4 max-md:w-[min(1136px,calc(100%_-_28px))]">
+      <a
+        class="grid h-11 min-w-11 place-items-center rounded-pill bg-ink px-3 text-sm font-black text-paper"
+        href="/portfolio#top"
+        :aria-label="`${name} 포트폴리오 홈`"
+      >
+        {{ displayMark }}
+      </a>
+      <nav
+        class="flex items-center gap-1 overflow-x-auto rounded-pill bg-chip-gray p-1 max-[520px]:max-w-[calc(100vw-96px)]"
+        aria-label="주요 섹션"
+      >
+        <a class="nav-link" href="#profile">Profile</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Work</a>
+        <a class="nav-link" href="#skills">Skills</a>
+      </nav>
+    </div>
   </header>
 </template>

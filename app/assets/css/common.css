@@ -1,37 +1,37 @@
   .section {
-    @apply mx-auto w-[min(1120px,calc(100%_-_40px))] py-[86px] max-md:w-[min(1120px,calc(100%_-_28px))] max-md:py-[58px];
+    @apply mx-auto w-[min(1136px,calc(100%_-_40px))] py-24 max-md:w-[min(1136px,calc(100%_-_28px))] max-md:py-16;
   }
 
   .eyebrow {
-    @apply mb-3.5 text-[13px] font-extrabold uppercase tracking-[0.08em] text-copper;
+    @apply mb-3 inline-flex rounded-pill bg-chip-gray px-4 py-2 text-sm font-medium text-ink;
   }
 
   .button {
-    @apply inline-flex min-h-[46px] items-center justify-center border border-ink px-[18px] font-extrabold transition-transform hover:-translate-y-px max-[520px]:w-full;
+    @apply inline-flex min-h-11 items-center justify-center rounded-pill px-5 py-3 text-[15px] font-medium leading-none transition hover:-translate-y-0.5 max-[520px]:w-full;
   }
 
   .button-primary {
-    @apply bg-ink text-paper;
+    @apply bg-ink text-paper hover:bg-black/80;
   }
 
   .button-secondary {
-    @apply bg-transparent text-ink;
+    @apply border border-ink bg-paper text-ink hover:bg-hover-gray;
   }
 
   .nav-link {
-    @apply px-3 py-2 text-sm font-semibold text-muted hover:bg-soft hover:text-ink max-md:px-2 max-md:text-xs;
+    @apply rounded-pill px-4 py-2 text-sm font-medium text-ink hover:bg-chip-gray max-md:px-3 max-md:text-xs;
   }
 
   .section-heading {
-    @apply mb-[42px] grid grid-cols-[240px_minmax(0,1fr)] items-start gap-10 max-md:grid-cols-1 max-md:gap-3.5;
+    @apply mb-12 grid grid-cols-[240px_minmax(0,1fr)] items-start gap-10 max-md:grid-cols-1 max-md:gap-3.5;
   }
 
   .section-title {
-    @apply text-[clamp(32px,5vw,58px)] font-extrabold leading-[1.08] tracking-normal;
+    @apply text-[clamp(32px,5vw,56px)] font-black leading-[1.08] tracking-normal;
   }
 
   .panel-grid {
-    @apply overflow-hidden border border-line bg-line shadow-soft;
+    @apply overflow-hidden rounded-featured bg-line shadow-card;
   }
 
   .page-shell {
@@ -39,7 +39,7 @@
   }
 
   .preview-card {
-    @apply border border-line bg-white/75 p-6 shadow-soft transition-transform hover:-translate-y-1;
+    @apply rounded-featured bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-card-hover;
   }
 
   .preview-card.is-disabled {

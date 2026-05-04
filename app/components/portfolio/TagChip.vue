@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
 
-<span class="inline-flex items-center rounded-md border border-forest/20 bg-forest/5 px-2.5 py-1 text-[12px] font-medium text-forest">
+<span class="inline-flex items-center rounded-pill bg-chip-gray px-3 py-1.5 text-[12px] font-medium text-ink">
   # {{ label }}
 </span>
 <!--<span class="inline-flex items-center gap-2 rounded border border-line bg-white px-2 py-1 text-[12px] font-bold text-ink shadow-sm">

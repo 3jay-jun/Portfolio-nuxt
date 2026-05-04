@@ -4,6 +4,7 @@ export type Person = {
   jobTitle: string;
   birthYear: string;
   age: string;
+  careerStart: string;
   careerLabel: string;
   location: string;
   photo: string;
