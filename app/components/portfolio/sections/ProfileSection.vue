@@ -89,7 +89,7 @@ const cardClick = (label:string, value:string) => {
             <div>
               <h3 class="text-[clamp(38px,7vw,72px)] font-black leading-[1.02]">{{ person.name }}</h3>
               <p class="mt-4 max-w-[520px] text-base leading-relaxed text-body-gray">
-                {{ person.jobTitle }} · {{ person.careerLabel }} · {{ person.location }}
+                {{ person.jobTitle }} · {{ personalRows[4][1] }} · {{ person.location }}
               </p>
 
               <p class="mt-5 text-base leading-[1.9] text-body-gray">{{ person.summary }}</p>
