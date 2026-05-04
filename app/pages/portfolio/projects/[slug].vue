@@ -57,8 +57,8 @@ useHead(() => ({
       <NuxtLink class="portfolio-detail-back" to="/portfolio#projects">Back to Selected Work</NuxtLink>
 
 
-      <section class="portfolio-detail-hero" :style="project.thumbnail ? 'grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);' : ''">
-        <div>
+      <section class="portfolio-detail-hero" :class="{ 'has-thumbnail': project.thumbnail }">
+        <div class="portfolio-detail-copy">
           <h1 class="portfolio-detail-title">{{ project.title }}</h1>
           <p class="portfolio-detail-meta">{{ project.meta }}</p>
           <p class="portfolio-detail-summary">

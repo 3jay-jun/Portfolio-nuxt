@@ -42,7 +42,7 @@ const contactLinks = computed(() =>
 <template>
   <main id="top">
     <HeroSection :person="person" :hero="portfolio.hero" :links="portfolio.links" />
-    <ProfileSection :person="person" :profile="portfolio.profile" />
+    <ProfileSection :person="person" />
     <ExperienceSection :items="portfolio.experience" />
     <ProjectsSection :projects="portfolio.projects" />
     <SkillsSection :skills="portfolio.skills" />
