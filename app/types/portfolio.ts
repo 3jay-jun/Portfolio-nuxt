@@ -10,6 +10,7 @@ export type Person = {
   photo: string;
   email: string;
   phone: string;
+  summary: string;
 };
 
 export type PortfolioLink = {
@@ -65,10 +66,6 @@ export type PortfolioData = {
         value: string;
       }>;
     };
-  };
-  profile: {
-    title: string;
-    paragraphs: string[];
   };
   experience: ExperienceItem[];
   projects: Project[];

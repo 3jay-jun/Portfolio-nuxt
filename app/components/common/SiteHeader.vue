@@ -21,7 +21,7 @@ const displayMark = computed(() => props.brandMark || fallbackMark.value);
   >
     <div class="mx-auto flex h-16 w-[min(1136px,calc(100%_-_40px))] items-center justify-between gap-4 max-md:w-[min(1136px,calc(100%_-_28px))]">
       <a
-        class="grid h-11 min-w-11 place-items-center rounded-pill bg-ink px-3 text-sm font-black text-paper"
+        class="grid place-items-center bg-ink p-2 py-4 text-sm font-black text-paper"
         href="/portfolio#top"
         :aria-label="`${name} 포트폴리오 홈`"
       >

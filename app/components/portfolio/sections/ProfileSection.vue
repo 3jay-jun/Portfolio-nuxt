@@ -3,7 +3,6 @@ import type { Person, PortfolioData } from "~/types/portfolio";
 
 const props = defineProps<{
   person: Person;
-  profile: PortfolioData["profile"];
 }>();
 
 
@@ -92,6 +91,8 @@ const cardClick = (label:string, value:string) => {
               <p class="mt-4 max-w-[520px] text-base leading-relaxed text-body-gray">
                 {{ person.jobTitle }} · {{ person.careerLabel }} · {{ person.location }}
               </p>
+
+              <p class="mt-5 text-base leading-[1.9] text-body-gray">{{ person.summary }}</p>
             </div>
           </div>
         </div>
@@ -104,20 +105,6 @@ const cardClick = (label:string, value:string) => {
         </dl>
       </aside>
 
-
-
-      <div class="grid gap-4 lg:grid-cols-2">
-        <article
-          v-for="(paragraph, index) in profile.paragraphs"
-          :key="paragraph"
-          class="rounded-featured bg-white p-7 shadow-card"
-        >
-          <span class="mb-5 inline-flex rounded-pill bg-black px-4 py-2 text-sm font-medium text-white">
-            {{ String(index + 1).padStart(2, "0") }}
-          </span>
-          <p class="m-0 text-base leading-[1.9] text-body-gray">{{ paragraph }}</p>
-        </article>
-      </div>
     </div>
   </section>
 </template>
