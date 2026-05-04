@@ -35,7 +35,7 @@
     "externalUrl": "https://devpuer.tistory.com/",
     "seo": {
       "title": "3Jay Blog",
-      "description": "정재준의 개발 기록과 학습 내용을 연결하는 블로그 페이지입니다.",
+      "description": "개발 기록과 학습 내용을 연결하는 블로그 페이지입니다.",
       "image": "/assets/service-blog.svg",
       "ogImage": "/assets/service-blog.svg"
     }
