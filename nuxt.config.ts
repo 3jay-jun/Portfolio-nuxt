@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   srcDir: "app/",
   components: [{ path: "~/components/", pathPrefix: false }],
   modules: ["@nuxtjs/tailwindcss"],
+
+  devServer : {
+    port: 3002,
+    host: '0.0.0.0'
+  },
   css: [
     "~/assets/css/main.css",
     "~/assets/css/font.css",
@@ -22,7 +27,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "ko",
       },
-      title: "3Jay.jun | Portfolio",
+      title: "3Jay",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },

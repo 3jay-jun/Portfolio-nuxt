@@ -3,10 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev --host 127.0.0.1 --port 4173",
-    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "build": "nuxi build && zip -r .output/root.zip .output/",
     "generate": "nuxt generate",
-    "preview": "nuxt preview --port 3003",
+    "preview": "nuxt preview",
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {
