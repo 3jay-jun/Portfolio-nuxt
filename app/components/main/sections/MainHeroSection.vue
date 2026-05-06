@@ -28,8 +28,8 @@ defineProps<{
         </p>
 
         <div class="mt-10 flex flex-wrap gap-3 [animation-delay:.38s] animate-fade-up">
-          <AppActionLink href="#services">Services More</AppActionLink>
-          <AppActionLink to="/portfolio" variant="secondary">Portfolio</AppActionLink>
+          <AppActionLink href="#services" variant="secondary">Services More</AppActionLink>
+          <AppActionLink to="/portfolio">Portfolio</AppActionLink>
         </div>
       </div>
 

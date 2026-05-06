@@ -33,7 +33,7 @@ const displayMark = computed(() => props.brandMark || fallbackMark.value);
       >
         <a class="nav-link" href="#profile">Profile</a>
         <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#projects">Work</a>
+        <a class="nav-link" href="#projects">projects</a>
         <a class="nav-link" href="#skills">Skills</a>
       </nav>
     </div>

@@ -8,6 +8,7 @@ defineProps<{
 
 <template>
   <section id="projects" class="mx-auto max-w-content px-6 py-24 reveal-on-scroll">
+
     <div class="mb-12 flex items-end justify-between gap-6">
       <div>
         <h2 class="text-[clamp(32px,5vw,56px)] font-black leading-[1.08]">Projects</h2>

@@ -15,7 +15,7 @@ const props = withDefaults(
 );
 
 const linkClasses = computed(() => [
-  "rounded-pill px-5 py-3 text-[15px] font-medium leading-none transition hover:-translate-y-0.5",
+  "rounded-pill px-4 py-2 text-sm font-medium leading-none transition hover:-translate-y-0.5",
   {
     "bg-black text-white hover:bg-black/80": props.variant === "primary",
     "border border-black bg-white text-black hover:bg-hover-gray": props.variant === "secondary",

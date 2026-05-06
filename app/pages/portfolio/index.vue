@@ -14,23 +14,38 @@ const { data: portfolio } = await useAsyncData("portfolio", () =>
   },
 );
 
+let revealObserver: IntersectionObserver | null = null;
+
 onMounted(async () => {
   await nextTick();
 
-  const revealTargets = document.querySelectorAll(".reveal-on-scroll");
-  const observer = new IntersectionObserver(
+  const revealTargets = Array.from(document.querySelectorAll(".reveal-on-scroll"));
+
+  if (!("IntersectionObserver" in window)) {
+    revealTargets.forEach((target) => target.classList.add("is-visible"));
+    return;
+  }
+
+  revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
+          revealObserver?.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.16 },
+    {
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.01,
+    },
   );
 
-  revealTargets.forEach((target) => observer.observe(target));
+  revealTargets.forEach((target) => revealObserver?.observe(target));
+});
+
+onBeforeUnmount(() => {
+  revealObserver?.disconnect();
 });
 
 const person = computed(() => portfolio.value.person);
