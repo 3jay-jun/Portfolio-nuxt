@@ -31,10 +31,10 @@ const displayMark = computed(() => props.brandMark || fallbackMark.value);
         class="flex items-center gap-1 overflow-x-auto rounded-pill bg-chip-gray p-1 max-[520px]:max-w-[calc(100vw-96px)]"
         aria-label="주요 섹션"
       >
-        <a class="nav-link" href="#profile">Profile</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#projects">projects</a>
-        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="/portfolio#profile">Profile</a>
+        <a class="nav-link" href="/portfolio#experience">Experience</a>
+        <a class="nav-link" href="/portfolio#projects">projects</a>
+        <a class="nav-link" href="/portfolio#skills">Skills</a>
       </nav>
     </div>
   </header>
