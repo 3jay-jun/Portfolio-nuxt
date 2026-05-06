@@ -65,7 +65,6 @@ useHead(() => ({
             {{ detail.summary || project.description }}
           </p>
         </div>
-
         <figure v-if="project.thumbnail" class="portfolio-detail-thumb">
           <img :src="project.thumbnail.src" :alt="project.thumbnail.alt" />
         </figure>
